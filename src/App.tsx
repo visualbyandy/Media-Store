@@ -23,6 +23,22 @@ import {
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+// Custom TikTok icon in Lucide style (since it's deprecated/missing in certain lucide-react builds)
+const Tiktok = ({ className = "w-6 h-6" }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
+
 // Pricing Data
 const PLATFORMS = [
   {
@@ -58,7 +74,7 @@ const PLATFORMS = [
   {
     id: 'tiktok',
     name: 'TikTok',
-    icon: <Send className="w-6 h-6" />, 
+    icon: <Tiktok className="w-6 h-6" />, 
     color: 'from-black to-slate-800',
     services: {
       followers: [
@@ -364,7 +380,7 @@ export default function App() {
                     </div>
                     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-2xl">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center"><Send /></div>
+                        <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center"><Tiktok /></div>
                         <div>
                           <div className="font-bold">TikTok Followers</div>
                           <div className="text-xs text-slate-500">Flash Delivery</div>
